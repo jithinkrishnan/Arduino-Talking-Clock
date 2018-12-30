@@ -1,5 +1,5 @@
 /************************************************************************
-*   Arduino EGG Incubator [Original code Modified]
+*   Arduino Talking Clock
 *   
 *   File:   ArduinoTalkingClock.ino
 *   Author:  Jithin Krishnan.K
