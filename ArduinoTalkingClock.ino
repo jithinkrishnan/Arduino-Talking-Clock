@@ -39,19 +39,19 @@ char i, hr;
 void setup()
 {
     tmrpcm.speakerPin=9;
-	  pinMode(buttonPin, INPUT);						  
-	  pinMode(AmpON, OUTPUT);					   
+    pinMode(buttonPin, INPUT);						  
+    pinMode(AmpON, OUTPUT);					   
     Serial.begin(115200);
     clock.begin();
 
-	  // Manual (YYYY, MM, DD, HH, II, SS								   
-	  //clock.setDateTime(2019, 1, 3, 8, 54, 54);										   
+    // Manual (YYYY, MM, DD, HH, II, SS								   
+    //clock.setDateTime(2019, 1, 3, 8, 54, 54);										   
   if(!SD.begin(SD_ChipSelectPin)) {
       Serial.println("SD fail");
       return;
     }
     tmrpcm.setVolume(5);
-	tmrpcm.quality(1); 				   
+    tmrpcm.quality(1); 				   
 }
 
 
@@ -59,9 +59,9 @@ void loop()
   {
    dt = clock.getDateTime();
 	  
-	 if(dt.hour > 12)
+   if(dt.hour > 12)
       hr = dt.hour - 12;
-    else
+   else
       hr = dt.hour;
       
    if (!dt.minute && !dt.second) {
@@ -86,7 +86,7 @@ void loop()
           AmpPowerDown(); 
         }
 		
-	if (!digitalRead(buttonPin)) {
+   if (!digitalRead(buttonPin)) {
       AmpPowerUp(); 
       TexttoSpeech(dt.hour);
       while(tmrpcm.isPlaying());
