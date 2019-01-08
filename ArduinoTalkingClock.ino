@@ -63,6 +63,8 @@ void loop()
       hr = dt.hour - 12;
    else
       hr = dt.hour;
+      if (hr == 0)
+          hr = 12;
       
    if (!dt.minute && !dt.second) {
         AmpPowerUp();
